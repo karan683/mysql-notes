@@ -1,0 +1,33 @@
+FOLLOWERS
+follower_id
+followee_id
+created_at
+
+CREATE TABLE FOLLOWERS (
+    follower_id INT NOT NULL,
+    followee_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(follower_id) REFERENCES users(id),
+    FOREIGN KEY(followee_id) REFERENCES users(id),
+    PRIMARY KEY(follower_id,followee_id)
+);
+
+mysql> CREATE TABLE FOLLOWERS (
+    ->     follower_id INT NOT NULL,
+    ->     followee_id INT NOT NULL,
+    ->     created_at TIMESTAMP DEFAULT NOW(),
+    ->     FOREIGN KEY(follower_id) REFERENCES users(id),
+    ->     FOREIGN KEY(followee_id) REFERENCES users(id),
+    ->     PRIMARY KEY(follower_id,followee_id)
+    -> );
+Query OK, 0 rows affected (2.31 sec)
+
+mysql> desc followers;
++-------------+-----------+------+-----+-------------------+-------------------+
+| Field       | Type      | Null | Key | Default           | Extra             |
++-------------+-----------+------+-----+-------------------+-------------------+
+| follower_id | int       | NO   | PRI | NULL              |                   |
+| followee_id | int       | NO   | PRI | NULL              |                   |
+| created_at  | timestamp | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------------+-----------+------+-----+-------------------+-------------------+
+3 rows in set (0.42 sec)

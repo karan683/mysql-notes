@@ -1,0 +1,32 @@
+
+NULL AND NOT NULL
+
+mysql> desc cats;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(50) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.20 sec)
+
+here the NULL value is "yes" because it can Null 
+for the value to be not null during inserting use NOT NULL Contraint during creating the table
+
+mysql> CREATE TABLE cats(
+    -> name VARCHAR(50) NOT NULL,
+    -> age INT NOT NULL
+    -> );
+Query OK, 0 rows affected (1.33 sec)
+
+mysql> desc cats;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(50) | NO   |     | NULL    |       |
+| age   | int         | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.17 sec)
+
+mysql> INSERT INTO cats(name) VALUES('texas');
+ERROR 1364 (HY000): Field 'age' doesn't have a default value

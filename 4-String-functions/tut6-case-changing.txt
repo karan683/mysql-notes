@@ -1,0 +1,50 @@
+UPPER() and LOWER()
+Change A String's Case
+
+SELECT UPPER(author_fname) from books;
+
+mysql> select upper(author_fname) from books;
++---------------------+
+| upper(author_fname) |
++---------------------+
+| JHUMPA              |
+| NEIL                |
+| NEIL                |
+| JHUMPA              |
+| DAVE                |
+| DAVE                |
+| MICHAEL             |
+| PATTI               |
+| DAVE                |
+| NEIL                |
+| RAYMOND             |
+| RAYMOND             |
+| DON                 |
+| JOHN                |
+| DAVID               |
+| DAVID               |
++---------------------+
+16 rows in set (0.08 sec)
+
+mysql> select lower(author_fname) from books;
++---------------------+
+| lower(author_fname) |
++---------------------+
+| jhumpa              |
+| neil                |
+| neil                |
+| jhumpa              |
+| dave                |
+| dave                |
+| michael             |
+| patti               |
+| dave                |
+| neil                |
+| raymond             |
+| raymond             |
+| don                 |
+| john                |
+| david               |
+| david               |
++---------------------+
+16 rows in set (0.02 sec)

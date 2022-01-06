@@ -1,0 +1,55 @@
+WHERE stock_quantity LIKE '____';
+these are 4 underscore
+here one " _ " underscore represents the one character
+
+mysql> SELECT title , stock_quantity from books;
++-----------------------------------------------------+----------------+
+| title                                               | stock_quantity |
++-----------------------------------------------------+----------------+
+| The Namesake                                        |             32 |
+| Norse Mythology                                     |             43 |
+| American Gods                                       |             12 |
+| Interpreter of Maladies                             |             97 |
+| A Hologram for the King: A Novel                    |            154 |
+| The Circle                                          |             26 |
+| The Amazing Adventures of Kavalier & Clay           |             68 |
+| Just Kids                                           |             55 |
+| A Heartbreaking Work of Staggering Genius           |            104 |
+| Coraline                                            |            100 |
+| What We Talk About When We Talk About Love: Stories |             23 |
+| Where I'm Calling From: Selected Stories            |             12 |
+| White Noise                                         |             49 |
+| Cannery Row                                         |             95 |
+| Oblivion: Stories                                   |            172 |
+| Consider the Lobster                                |             92 |
+| 10% Happier                                         |             29 |
+| fake_book                                           |            287 |
+| Lincoln In The Bardo                                |           1000 |
++-----------------------------------------------------+----------------+
+19 rows in set (0.00 sec)
+
+mysql> SELECT title , stock_quantity FROM books WHERE stock_quantity LIKE '____';
++----------------------+----------------+
+| title                | stock_quantity |
++----------------------+----------------+
+| Lincoln In The Bardo |           1000 |
++----------------------+----------------+
+1 row in set (0.00 sec)
+
+if i want to search the book title that has "%" in it
+after "\" you can specify any special characters
+mysql> SELECT title FROM books WHERE title LIKE '%\%%';
++-------------+
+| title       |
++-------------+
+| 10% Happier |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT title FROM books WHERE title LIKE "%\_%";
++-----------+
+| title     |
++-----------+
+| fake_book |
++-----------+
+1 row in set (0.00 sec)

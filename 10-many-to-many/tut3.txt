@@ -1,0 +1,35 @@
+Challenge 2
+
++----------------------+-------------+
+| title                | avg(rating) |
++----------------------+-------------+
+| General Hospital     |     5.38000 |
+| Curb Your Enthusiasm |     8.12000 |
+| Bob's Burgers        |     7.52000 |
+| Bojack Horseman      |     7.94000 |
+| Archer               |     8.12000 |
+| Seinfeld             |     7.60000 |
+| Arrested Development |     8.08000 |
+| Freaks and Geeks     |     8.60000 |
+| Stranger Things      |     8.76667 |
+| Fargo                |     9.40000 |
++----------------------+-------------+
+
+mysql> SELECT title,avg(rating) FROM series JOIN reviews ON series.id = reviews.series_id GROUP BY series.id ORDER BY avg(rating);
++----------------------+-------------+
+| title                | avg(rating) |
++----------------------+-------------+
+| General Hospital     |     5.38000 |
+| Bob's Burgers        |     7.52000 |
+| Seinfeld             |     7.60000 |
+| Bojack Horseman      |     7.94000 |
+| Arrested Development |     8.08000 |
+| Archer               |     8.12000 |
+| Curb Your Enthusiasm |     8.12000 |
+| Freaks and Geeks     |     8.60000 |
+| Stranger Things      |     8.76667 |
+| Breaking Bad         |     9.36000 |
+| Fargo                |     9.40000 |
+| Halt and Catch Fire  |     9.90000 |
++----------------------+-------------+
+12 rows in set (0.00 sec)

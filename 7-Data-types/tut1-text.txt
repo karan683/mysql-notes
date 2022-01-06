@@ -1,0 +1,8 @@
+Storing Text
+
+VARCHAR()
+CHAR()
+What is the difference ? 
+CHAR has the fixed length
+VARCHAR means variable length
+The length can be any value from 0 to 255

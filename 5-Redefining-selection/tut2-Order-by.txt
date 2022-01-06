@@ -1,0 +1,113 @@
+ORDER BY is used for sorting the data
+
+SELECT <colname> from <tablename> ORDER BY <colname>;
+
+This is sorted by default by ascending order
+mysql> SELECT author_lname FROM books ORDER BY author_lname;
++----------------+
+| author_lname   |
++----------------+
+| Carver         |
+| Carver         |
+| Chabon         |
+| DeLillo        |
+| Eggers         |
+| Eggers         |
+| Eggers         |
+| Foster Wallace |
+| Foster Wallace |
+| Gaiman         |
+| Gaiman         |
+| Gaiman         |
+| Harris         |
+| Harris         |
+| Lahiri         |
+| Lahiri         |
+| Saunders       |
+| Smith          |
+| Steinbeck      |
++----------------+
+19 rows in set (0.03 sec)
+
+If you want to sort in decending order add "DESC" keyword at last of the query
+
+mysql> SELECT author_lname FROM books ORDER BY author_lname DESC;
++----------------+
+| author_lname   |
++----------------+
+| Steinbeck      |
+| Smith          |
+| Saunders       |
+| Lahiri         |
+| Lahiri         |
+| Harris         |
+| Harris         |
+| Gaiman         |
+| Gaiman         |
+| Gaiman         |
+| Foster Wallace |
+| Foster Wallace |
+| Eggers         |
+| Eggers         |
+| Eggers         |
+| DeLillo        |
+| Chabon         |
+| Carver         |
+| Carver         |
++----------------+
+19 rows in set (0.00 sec)
+
+mysql> SELECT title , released_year , pages FROM books ORDER BY released_year;
++-----------------------------------------------------+---------------+-------+
+| title                                               | released_year | pages |
++-----------------------------------------------------+---------------+-------+
+| Cannery Row                                         |          1945 |   181 |
+| What We Talk About When We Talk About Love: Stories |          1981 |   176 |
+| White Noise                                         |          1985 |   320 |
+| Where I'm Calling From: Selected Stories            |          1989 |   526 |
+| Interpreter of Maladies                             |          1996 |   198 |
+| The Amazing Adventures of Kavalier & Clay           |          2000 |   634 |
+| American Gods                                       |          2001 |   465 |
+| A Heartbreaking Work of Staggering Genius           |          2001 |   437 |
+| fake_book                                           |          2001 |   428 |
+| The Namesake                                        |          2003 |   291 |
+| Coraline                                            |          2003 |   208 |
+| Oblivion: Stories                                   |          2004 |   329 |
+| Consider the Lobster                                |          2005 |   343 |
+| Just Kids                                           |          2010 |   304 |
+| A Hologram for the King: A Novel                    |          2012 |   352 |
+| The Circle                                          |          2013 |   504 |
+| 10% Happier                                         |          2014 |   256 |
+| Norse Mythology                                     |          2016 |   304 |
+| Lincoln In The Bardo                                |          2017 |   367 |
++-----------------------------------------------------+---------------+-------+
+19 rows in set (0.00 sec)
+
+here 2 refer to "author_fname" only to write less code
+this is allowed in mysql
+
+mysql> SELECT title , author_fname , author_lname FROM books ORDER BY 2;
++-----------------------------------------------------+--------------+----------------+
+| title                                               | author_fname | author_lname   |
++-----------------------------------------------------+--------------+----------------+
+| 10% Happier                                         | Dan          | Harris         |
+| A Hologram for the King: A Novel                    | Dave         | Eggers         |
+| The Circle                                          | Dave         | Eggers         |
+| A Heartbreaking Work of Staggering Genius           | Dave         | Eggers         |
+| Oblivion: Stories                                   | David        | Foster Wallace |
+| Consider the Lobster                                | David        | Foster Wallace |
+| White Noise                                         | Don          | DeLillo        |
+| fake_book                                           | Freida       | Harris         |
+| Lincoln In The Bardo                                | George       | Saunders       |
+| The Namesake                                        | Jhumpa       | Lahiri         |
+| Interpreter of Maladies                             | Jhumpa       | Lahiri         |
+| Cannery Row                                         | John         | Steinbeck      |
+| The Amazing Adventures of Kavalier & Clay           | Michael      | Chabon         |
+| Norse Mythology                                     | Neil         | Gaiman         |
+| American Gods                                       | Neil         | Gaiman         |
+| Coraline                                            | Neil         | Gaiman         |
+| Just Kids                                           | Patti        | Smith          |
+| What We Talk About When We Talk About Love: Stories | Raymond      | Carver         |
+| Where I'm Calling From: Selected Stories            | Raymond      | Carver         |
++-----------------------------------------------------+--------------+----------------+
+19 rows in set (0.00 sec)

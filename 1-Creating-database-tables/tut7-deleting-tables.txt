@@ -1,0 +1,7 @@
+QUERY = DROP TABLE <tablename>;
+
+mysql> DROP TABLE cats;
+Query OK, 0 rows affected (0.96 sec)
+
+mysql> SHOW TABLES;
+Empty set (0.13 sec)

@@ -1,0 +1,28 @@
+MIN AND MAX aggregate function are use to get minimum and maximum values from the table
+
+find the minimum released year book
+SELECT MIN(released_year) from books;
+
+mysql> SELECT MIN(released_year) FROM books;
++--------------------+
+| MIN(released_year) |
++--------------------+
+|               1945 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(pages) FROM books;
++------------+
+| MIN(pages) |
++------------+
+|        176 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(pages) FROM books;
++------------+
+| MAX(pages) |
++------------+
+|        634 |
++------------+
+1 row in set (0.00 sec)

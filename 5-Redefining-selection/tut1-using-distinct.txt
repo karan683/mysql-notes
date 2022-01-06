@@ -1,0 +1,47 @@
+DISTINCT 
+
+distinct is used with conjuction with select if we want distinct data or unique data
+gives unique data and not duplicate data
+
+SELECT DISTINCT <colname> from <databasename>;
+
+mysql> SELECT DISTINCT author_lname from books;
++----------------+
+| author_lname   |
++----------------+
+| Lahiri         |
+| Gaiman         |
+| Eggers         |
+| Chabon         |
+| Smith          |
+| Carver         |
+| DeLillo        |
+| Steinbeck      |
+| Foster Wallace |
+| Harris         |
+| Saunders       |
++----------------+
+11 rows in set (0.02 sec)
+
+mysql> select distinct released_year from books;
++---------------+
+| released_year |
++---------------+
+|          2003 |
+|          2016 |
+|          2001 |
+|          1996 |
+|          2012 |
+|          2013 |
+|          2000 |
+|          2010 |
+|          1981 |
+|          1989 |
+|          1985 |
+|          1945 |
+|          2004 |
+|          2005 |
+|          2014 |
+|          2017 |
++---------------+
+16 rows in set (0.00 sec)

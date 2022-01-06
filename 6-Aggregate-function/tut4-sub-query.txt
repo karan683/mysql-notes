@@ -1,0 +1,11 @@
+Query inside another query is called as SUBQUERIES
+
+SELECT * FROM books WHERE pages = ( SELECT MIN(pages) FROM books);
+
+mysql> SELECT * FROM books WHERE pages = (SELECT MIN(pages) FROM books);
++---------+-----------------------------------------------------+--------------+--------------+---------------+----------------+-------+
+| book_id | title                                               | author_fname | author_lname | released_year | stock_quantity | pages |
++---------+-----------------------------------------------------+--------------+--------------+---------------+----------------+-------+
+|      11 | What We Talk About When We Talk About Love: Stories | Raymond      | Carver       |          1981 |             23 |   176 |
++---------+-----------------------------------------------------+--------------+--------------+---------------+----------------+-------+
+1 row in set (0.00 sec)

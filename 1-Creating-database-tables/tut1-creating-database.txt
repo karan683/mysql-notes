@@ -1,0 +1,40 @@
+
+QUERY 
+    1 . "SHOW DATABASES;"
+    2 . "CREATE DATABASE <name>;"
+
+"show databases;" query lists all databases available on the server
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| pratice            |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.38 sec)
+mysql>
+
+"CREATE DATABASE <name>;"
+mysql> create database hello_world;
+Query OK, 1 row affected (1.25 sec)
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hello_world        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| pratice            |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+8 rows in set (0.81 sec)

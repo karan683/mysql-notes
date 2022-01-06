@@ -1,0 +1,39 @@
+COMMENTS
+id
+comment_text
+user_id
+photo_id
+created_at
+
+CREATE TABLE COMMENTS (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ comment_text VARCHAR(255) NOT NULL,
+ user_id INT NOT NULL,
+ photo_id INT NOT NULL,
+ created_at TIMESTAMP DEFAULT NOW(),
+ FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+ FOREIGN KEY(photo_id) REFERENCES photos(id) ON DELETE CASCADE
+);
+
+mysql> CREATE TABLE COMMENTS (
+    ->  id INT AUTO_INCREMENT PRIMARY KEY,
+    ->  comment_text VARCHAR(255) NOT NULL,
+    ->  user_id INT NOT NULL,
+    ->  photo_id INT NOT NULL,
+    ->  created_at TIMESTAMP DEFAULT NOW(),
+    ->  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+    ->  FOREIGN KEY(photo_id) REFERENCES photos(id) ON DELETE CASCADE
+    -> );
+Query OK, 0 rows affected (2.63 sec)
+
+mysql> desc comments;
++--------------+--------------+------+-----+-------------------+-------------------+
+| Field        | Type         | Null | Key | Default           | Extra             |
++--------------+--------------+------+-----+-------------------+-------------------+
+| id           | int          | NO   | PRI | NULL              | auto_increment    |
+| comment_text | varchar(255) | NO   |     | NULL              |                   |
+| user_id      | int          | NO   | MUL | NULL              |                   |
+| photo_id     | int          | NO   | MUL | NULL              |                   |
+| created_at   | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++--------------+--------------+------+-----+-------------------+-------------------+
+5 rows in set (0.15 sec)

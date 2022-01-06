@@ -1,0 +1,22 @@
+INSERT Adding Data to Your Tables
+
+INSERT INTO <tablename>(column_name) VALUES (data);
+
+mysql> INSERT INTO cats(name , age) VALUES("blue",5);
+Query OK, 1 row affected (0.14 sec)
+
+we can change the column sequence
+
+mysql> INSERT INTO cats(age,name) VALUES(1,'kitty');
+Query OK, 1 row affected (0.24 sec)
+
+
+Retriving the data
+mysql> select * from cats;
++-------+------+
+| name  | age  |
++-------+------+
+| blue  |    5 |
+| kitty |    1 |
++-------+------+
+2 rows in set (0.01 sec)

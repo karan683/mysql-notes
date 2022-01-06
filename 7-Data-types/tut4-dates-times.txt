@@ -1,0 +1,5 @@
+Dates and Times
+
+1  DATE 'YYYY-MM-DD' FORMAT but not time
+2  TIME 'HH:MM:SS' but not date
+3  DATETIME 'YYYY-MM-DD HH:MM:SS' you get both

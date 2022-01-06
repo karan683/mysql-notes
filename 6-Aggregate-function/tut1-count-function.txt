@@ -1,0 +1,35 @@
+Aggregate Functions - these are build in Functions in my sql that is used to aggregate or combine data to get useful out of it
+Count
+
+mysql> SELECT COUNT(*) FROM books;
++----------+
+| COUNT(*) |
++----------+
+|       19 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(DISTINCT(author_fname)) FROM books;
++-------------------------------+
+| COUNT(DISTINCT(author_fname)) |
++-------------------------------+
+|                            12 |
++-------------------------------+
+1 row in set (0.06 sec)
+
+mysql> SELECT COUNT(DISTINCT author_lname , author_fname) from books;
++---------------------------------------------+
+| COUNT(DISTINCT author_lname , author_fname) |
++---------------------------------------------+
+|                                          12 |
++---------------------------------------------+
+1 row in set (0.00 sec)
+
+how many title contain the keyword "the" in the title
+mysql> select count(title) from books where title like "%the%";
++--------------+
+| count(title) |
++--------------+
+|            6 |
++--------------+
+1 row in set (0.00 sec)

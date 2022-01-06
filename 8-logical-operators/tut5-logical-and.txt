@@ -1,0 +1,80 @@
+SELECT title, author_lname, released_year FROM books
+WHERE author_lname='Eggers';
+
+mysql> SELECT title, author_lname, released_year FROM books
+    -> WHERE author_lname='Eggers';
++-------------------------------------------+--------------+---------------+
+| title                                     | author_lname | released_year |
++-------------------------------------------+--------------+---------------+
+| A Hologram for the King: A Novel          | Eggers       |          2012 |
+| The Circle                                | Eggers       |          2013 |
+| A Heartbreaking Work of Staggering Genius | Eggers       |          2001 |
++-------------------------------------------+--------------+---------------+
+3 rows in set (0.12 sec)
+ 
+SELECT title, author_lname, released_year FROM books
+WHERE released_year > 2010;
+
+mysql> SELECT title, author_lname, released_year FROM books
+    -> WHERE released_year > 2010;
++----------------------------------+--------------+---------------+
+| title                            | author_lname | released_year |
++----------------------------------+--------------+---------------+
+| Norse Mythology                  | Gaiman       |          2016 |
+| A Hologram for the King: A Novel | Eggers       |          2012 |
+| The Circle                       | Eggers       |          2013 |
+| 10% Happier                      | Harris       |          2014 |
+| Lincoln In The Bardo             | Saunders     |          2017 |
++----------------------------------+--------------+---------------+
+5 rows in set (0.00 sec)
+ 
+SELECT  
+    title, 
+    author_lname, 
+    released_year FROM books
+WHERE author_lname='Eggers' 
+    AND released_year > 2010;
+
+mysql> SELECT
+    ->     title,
+    ->     author_lname,
+    ->     released_year FROM books
+    -> WHERE author_lname='Eggers'
+    ->     AND released_year > 2010;
++----------------------------------+--------------+---------------+
+| title                            | author_lname | released_year |
++----------------------------------+--------------+---------------+
+| A Hologram for the King: A Novel | Eggers       |          2012 |
+| The Circle                       | Eggers       |          2013 |
++----------------------------------+--------------+---------------+
+2 rows in set (0.00 sec)
+ 
+SELECT 1 < 5 AND 7 = 9;
+-- false
+ 
+SELECT -10 > -20 AND 0 <= 0;
+-- true
+ 
+SELECT -40 <= 0 AND 10 > 40;
+--false
+ 
+SELECT 54 <= 54 AND 'a' = 'A';
+-- true
+ 
+SELECT * 
+FROM books
+WHERE author_lname='Eggers' 
+    AND released_year > 2010 
+    AND title LIKE '%novel%';
+
+mysql> SELECT *
+    -> FROM books
+    -> WHERE author_lname='Eggers'
+    ->     AND released_year > 2010
+    ->     AND title LIKE '%novel%';
++---------+----------------------------------+--------------+--------------+---------------+----------------+-------+
+| book_id | title                            | author_fname | author_lname | released_year | stock_quantity | pages |
++---------+----------------------------------+--------------+--------------+---------------+----------------+-------+
+|       5 | A Hologram for the King: A Novel | Dave         | Eggers       |          2012 |            154 |   352 |
++---------+----------------------------------+--------------+--------------+---------------+----------------+-------+
+1 row in set (0.03 sec)

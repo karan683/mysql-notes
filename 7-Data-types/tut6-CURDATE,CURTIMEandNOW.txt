@@ -1,0 +1,23 @@
+CURDATE() - gives current date
+CURTIME() - gives current time
+NOW() - current datetime
+
+mysql> SELECT CURDATE();
++------------+
+| CURDATE()  |
++------------+
+| 2021-11-26 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> insert into people(name,birthdate,birthtime,birthdt) values('bob',curdate(),curtime(),now());
+Query OK, 1 row affected (0.19 sec)
+
+mysql> select * from people;
++-------+------------+-----------+---------------------+
+| name  | birthdate  | birthtime | birthdt             |
++-------+------------+-----------+---------------------+
+| karan | 2001-08-17 | 12:15:00  | 2001-08-17 12:15:00 |
+| bob   | 2021-11-26 | 14:44:16  | 2021-11-26 14:44:16 |
++-------+------------+-----------+---------------------+
+2 rows in set (0.00 sec)

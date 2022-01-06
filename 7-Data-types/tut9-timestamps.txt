@@ -1,0 +1,54 @@
+saving information about when you insert something in the table
+
+mysql> create table comments(
+    -> name varchar(100),
+    -> created_at timestamp default now()
+    -> );
+Query OK, 0 rows affected (2.04 sec)
+
+mysql> INSERT INTO comments(name) values('my good book');
+Query OK, 1 row affected (0.29 sec)
+
+mysql> select * from comments;
++--------------+---------------------+
+| name         | created_at          |
++--------------+---------------------+
+| my good book | 2021-11-26 20:04:14 |
++--------------+---------------------+
+1 row in set (0.00 sec)
+
+if we want update at also 
+
+create table comments2 (
+    content VARCHAR(100),
+    changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+)
+mysql> create table comments2 (
+    ->     content VARCHAR(100),
+    ->     changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+    -> )
+    -> ;
+Query OK, 0 rows affected (1.88 sec)
+
+mysql> INSERT INTO comments2(content) values('my good book');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from comments2;
++--------------+---------------------+
+| content      | changed_at          |
++--------------+---------------------+
+| my good book | 2021-11-26 20:10:47 |
++--------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> update comments2 set content = 'my good books' where content='my good book';
+Query OK, 1 row affected (0.15 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from comments2;
++---------------+---------------------+
+| content       | changed_at          |
++---------------+---------------------+
+| my good books | 2021-11-26 20:12:15 |
++---------------+---------------------+
+1 row in set (0.11 sec)

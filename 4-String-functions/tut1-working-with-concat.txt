@@ -1,0 +1,127 @@
+CONCAT(x,y,z)
+Combine data for cleaner output
+
+mysql> select author_fname , author_lname from books;
++--------------+----------------+
+| author_fname | author_lname   |
++--------------+----------------+
+| Jhumpa       | Lahiri         |
+| Neil         | Gaiman         |
+| Neil         | Gaiman         |
+| Jhumpa       | Lahiri         |
+| Dave         | Eggers         |
+| Dave         | Eggers         |
+| Michael      | Chabon         |
+| Patti        | Smith          |
+| Dave         | Eggers         |
+| Neil         | Gaiman         |
+| Raymond      | Carver         |
+| Raymond      | Carver         |
+| Don          | DeLillo        |
+| John         | Steinbeck      |
+| David        | Foster Wallace |
+| David        | Foster Wallace |
++--------------+----------------+
+16 rows in set (0.00 sec)
+
+CONCAT(author_lname,author_lname);
+CONCAT(column , 'text' , anotherColumn , 'more text' );
+CONCAT(author_fname,' ',author_lname);
+
+SELECT CONCAT(column1,column2) FROM <tablename>;
+SELECT CONCAT(author_fname,' ',author_lname) FROM books;
+
+mysql> SELECT CONCAT(author_fname,' ',author_lname) FROM books;
++---------------------------------------+
+| CONCAT(author_fname,' ',author_lname) |
++---------------------------------------+
+| Jhumpa Lahiri                         |
+| Neil Gaiman                           |
+| Neil Gaiman                           |
+| Jhumpa Lahiri                         |
+| Dave Eggers                           |
+| Dave Eggers                           |
+| Michael Chabon                        |
+| Patti Smith                           |
+| Dave Eggers                           |
+| Neil Gaiman                           |
+| Raymond Carver                        |
+| Raymond Carver                        |
+| Don DeLillo                           |
+| John Steinbeck                        |
+| David Foster Wallace                  |
+| David Foster Wallace                  |
++---------------------------------------+
+16 rows in set (0.23 sec)
+
+mysql> SELECT CONCAT(author_fname,' ',author_lname) AS 'full name' FROM books;
++----------------------+
+| full name            |
++----------------------+
+| Jhumpa Lahiri        |
+| Neil Gaiman          |
+| Neil Gaiman          |
+| Jhumpa Lahiri        |
+| Dave Eggers          |
+| Dave Eggers          |
+| Michael Chabon       |
+| Patti Smith          |
+| Dave Eggers          |
+| Neil Gaiman          |
+| Raymond Carver       |
+| Raymond Carver       |
+| Don DeLillo          |
+| John Steinbeck       |
+| David Foster Wallace |
+| David Foster Wallace |
++----------------------+
+16 rows in set (0.00 sec)
+
+mysql> select author_fname as first , author_lname as last , concat(author_fname,author_lname) as full from books;
++---------+----------------+---------------------+
+| first   | last           | full                |
++---------+----------------+---------------------+
+| Jhumpa  | Lahiri         | JhumpaLahiri        |
+| Neil    | Gaiman         | NeilGaiman          |
+| Neil    | Gaiman         | NeilGaiman          |
+| Jhumpa  | Lahiri         | JhumpaLahiri        |
+| Dave    | Eggers         | DaveEggers          |
+| Dave    | Eggers         | DaveEggers          |
+| Michael | Chabon         | MichaelChabon       |
+| Patti   | Smith          | PattiSmith          |
+| Dave    | Eggers         | DaveEggers          |
+| Neil    | Gaiman         | NeilGaiman          |
+| Raymond | Carver         | RaymondCarver       |
+| Raymond | Carver         | RaymondCarver       |
+| Don     | DeLillo        | DonDeLillo          |
+| John    | Steinbeck      | JohnSteinbeck       |
+| David   | Foster Wallace | DavidFoster Wallace |
+| David   | Foster Wallace | DavidFoster Wallace |
++---------+----------------+---------------------+
+16 rows in set (0.00 sec)
+
+CONCAT_WS
+Concat With separators
+
+mysql> SELECT CONCAT_WS('-',title,author_fname,author_lname) from books;
++--------------------------------------------------------------------+
+| CONCAT_WS('-',title,author_fname,author_lname)                     |
++--------------------------------------------------------------------+
+| The Namesake-Jhumpa-Lahiri                                         |
+| Norse Mythology-Neil-Gaiman                                        |
+| American Gods-Neil-Gaiman                                          |
+| Interpreter of Maladies-Jhumpa-Lahiri                              |
+| A Hologram for the King: A Novel-Dave-Eggers                       |
+| The Circle-Dave-Eggers                                             |
+| The Amazing Adventures of Kavalier & Clay-Michael-Chabon           |
+| Just Kids-Patti-Smith                                              |
+| A Heartbreaking Work of Staggering Genius-Dave-Eggers              |
+| Coraline-Neil-Gaiman                                               |
+| What We Talk About When We Talk About Love: Stories-Raymond-Carver |
+| Where I'm Calling From: Selected Stories-Raymond-Carver            |
+| White Noise-Don-DeLillo                                            |
+| Cannery Row-John-Steinbeck                                         |
+| Oblivion: Stories-David-Foster Wallace                             |
+| Consider the Lobster-David-Foster Wallace                          |
++--------------------------------------------------------------------+
+16 rows in set (0.10 sec)

@@ -1,0 +1,13 @@
+we are going to store
+
+USERS
+PHOTOS
+COMMENTS
+LIKES
+HASHTAGS
+FOLLOWERS
+FOLLOWINGS
+
+
+
+

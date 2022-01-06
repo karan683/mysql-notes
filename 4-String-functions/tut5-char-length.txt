@@ -1,0 +1,58 @@
+CHAR_LENGTH
+Counts Characters in String
+
+SELECT CHAR_LENGTH('Hello World');
+
+mysql> select char_length('hello world');
++----------------------------+
+| char_length('hello world') |
++----------------------------+
+|                         11 |
++----------------------------+
+1 row in set (0.04 sec)
+
+mysql> SELECT CHAR_LENGTH(title) FROM books;
++--------------------+
+| CHAR_LENGTH(title) |
++--------------------+
+|                 12 |
+|                 15 |
+|                 13 |
+|                 23 |
+|                 32 |
+|                 10 |
+|                 41 |
+|                  9 |
+|                 41 |
+|                  8 |
+|                 51 |
+|                 40 |
+|                 11 |
+|                 11 |
+|                 17 |
+|                 20 |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> SELECT author_fname , CHAR_LENGTH(author_fname) from books;
++--------------+---------------------------+
+| author_fname | CHAR_LENGTH(author_fname) |
++--------------+---------------------------+
+| Jhumpa       |                         6 |
+| Neil         |                         4 |
+| Neil         |                         4 |
+| Jhumpa       |                         6 |
+| Dave         |                         4 |
+| Dave         |                         4 |
+| Michael      |                         7 |
+| Patti        |                         5 |
+| Dave         |                         4 |
+| Neil         |                         4 |
+| Raymond      |                         7 |
+| Raymond      |                         7 |
+| Don          |                         3 |
+| John         |                         4 |
+| David        |                         5 |
+| David        |                         5 |
++--------------+---------------------------+
+16 rows in set (0.00 sec)

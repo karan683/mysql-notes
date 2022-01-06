@@ -1,0 +1,19 @@
+mysql> create table people(
+    -> name varchar(100),
+    -> birthdate DATE,
+    -> birthtime TIME,
+    -> birthdt DATETIME
+    -> );
+Query OK, 0 rows affected (1.76 sec)
+
+mysql> insert into people(name , birthdate , birthtime , birthdt) 
+       values('karan','2001-08-17','12:15:00','2001-08-17 12:15:00');
+Query OK, 1 row affected (0.32 sec)
+
+mysql> SELECT * FROM people;
++-------+------------+-----------+---------------------+
+| name  | birthdate  | birthtime | birthdt             |
++-------+------------+-----------+---------------------+
+| karan | 2001-08-17 | 12:15:00  | 2001-08-17 12:15:00 |
++-------+------------+-----------+---------------------+
+1 row in set (0.00 sec)

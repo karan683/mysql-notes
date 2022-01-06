@@ -1,0 +1,19 @@
+QUERY =  "DROP DATABASE <name>;"
+
+mysql> DROP DATABASE hello_world;
+Query OK, 0 rows affected (0.64 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| pratice            |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+

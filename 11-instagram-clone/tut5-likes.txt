@@ -1,0 +1,33 @@
+LIKES
+user_id
+photo_id
+created_at
+
+CREATE TABLE LIKES (
+    user_id INT NOT NULL,
+    photo_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(photo_id) REFERENCES photos(id),
+    PRIMARY KEY(user_id,photo_id)
+);
+
+mysql> CREATE TABLE LIKES (
+    ->     user_id INT NOT NULL,
+    ->     photo_id INT NOT NULL,
+    ->     created_at TIMESTAMP DEFAULT NOW(),
+    ->     FOREIGN KEY(user_id) REFERENCES users(id),
+    ->     FOREIGN KEY(photo_id) REFERENCES photos(id),
+    ->     PRIMARY KEY(user_id,photo_id)
+    -> );
+Query OK, 0 rows affected (1.60 sec)
+
+mysql> DESC LIKES;
++------------+-----------+------+-----+-------------------+-------------------+
+| Field      | Type      | Null | Key | Default           | Extra             |
++------------+-----------+------+-----+-------------------+-------------------+
+| user_id    | int       | NO   | PRI | NULL              |                   |
+| photo_id   | int       | NO   | PRI | NULL              |                   |
+| created_at | timestamp | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+-----------+------+-----+-------------------+-------------------+
+3 rows in set (0.66 sec)

@@ -1,0 +1,63 @@
+LIMIT 
+if you want first two best selling books
+
+
+SELECT * FROM <tablename> LIMIT 1;
+
+mysql> SELECT title FROM books LIMIT 3;
++-----------------+
+| title           |
++-----------------+
+| The Namesake    |
+| Norse Mythology |
+| American Gods   |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM books LIMIT 1;
++---------+--------------+--------------+--------------+---------------+----------------+-------+
+| book_id | title        | author_fname | author_lname | released_year | stock_quantity | pages |
++---------+--------------+--------------+--------------+---------------+----------------+-------+
+|       1 | The Namesake | Jhumpa       | Lahiri       |          2003 |             32 |   291 |
++---------+--------------+--------------+--------------+---------------+----------------+-------+
+1 row in set (0.00 sec)
+
+Using with order by
+
+SELECT title , released_year FROM books ORDER BY released_year LIMIT 3;
+
+mysql> SELECT title , released_year FROM books ORDER BY released_year LIMIT 3;
++-----------------------------------------------------+---------------+
+| title                                               | released_year |
++-----------------------------------------------------+---------------+
+| Cannery Row                                         |          1945 |
+| What We Talk About When We Talk About Love: Stories |          1981 |
+| White Noise                                         |          1985 |
++-----------------------------------------------------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT title , released_year FROM books ORDER BY released_year DESC LIMIT 5;
++----------------------------------+---------------+
+| title                            | released_year |
++----------------------------------+---------------+
+| Lincoln In The Bardo             |          2017 |
+| Norse Mythology                  |          2016 |
+| 10% Happier                      |          2014 |
+| The Circle                       |          2013 |
+| A Hologram for the King: A Novel |          2012 |
++----------------------------------+---------------+
+5 rows in set (0.00 sec)
+
+
+here 1 means exclude 1 and next from next means record will start from 2 and 5 means give me next 5 records
+mysql> SELECT title , released_year FROM books ORDER BY released_year DESC LIMIT 1,5;
++----------------------------------+---------------+
+| title                            | released_year |
++----------------------------------+---------------+
+| Norse Mythology                  |          2016 |
+| 10% Happier                      |          2014 |
+| The Circle                       |          2013 |
+| A Hologram for the King: A Novel |          2012 |
+| Just Kids                        |          2010 |
++----------------------------------+---------------+
+5 rows in set (0.00 sec)

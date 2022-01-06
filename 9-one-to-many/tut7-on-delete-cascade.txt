@@ -1,0 +1,62 @@
+ON DELETE CASCADE 
+if we have foreign key relationship suppose we have customer and order table and if we delete the one customer then we should also delete the order related to that customer
+
+CREATE TABLE customers(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(100)
+);
+CREATE TABLE orders(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE,
+    amount DECIMAL(8,2),
+    customer_id INT,
+    FOREIGN KEY(customer_id) REFERENCES customers(id)
+    ON DELETE CASCADE
+);
+
+mysql> CREATE TABLE customers(
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     first_name VARCHAR(100),
+    ->     last_name VARCHAR(100),
+    ->     email VARCHAR(100)
+    -> );
+
+mysql> CREATE TABLE orders(
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     order_date DATE,
+    ->     amount DECIMAL(8,2),
+    ->     customer_id INT,
+    ->     FOREIGN KEY(customer_id) REFERENCES customers(id)
+    ->     ON DELETE CASCADE
+    -> );
+Query OK, 0 rows affected (3.09 sec)
+
+INSERT INTO customers (first_name, last_name, email) 
+VALUES ('Boy', 'George', 'george@gmail.com'),
+       ('George', 'Michael', 'gm@gmail.com'),
+       ('David', 'Bowie', 'david@gmail.com'),
+       ('Blue', 'Steele', 'blue@gmail.com'),
+       ('Bette', 'Davis', 'bette@aol.com');
+       
+INSERT INTO orders (order_date, amount, customer_id)
+VALUES ('2016/02/10', 99.99, 1),
+       ('2017/11/11', 35.50, 1),
+       ('2014/12/12', 800.67, 2),
+       ('2015/01/03', 12.50, 2),
+       ('1999/04/11', 450.25, 5);
+
+mysql> delete from customers where id=1;
+Query OK, 1 row affected (0.19 sec)
+
+now you can see the order related to customer whose id was 1 is deleted
+mysql> select * from orders;
++----+------------+--------+-------------+
+| id | order_date | amount | customer_id |
++----+------------+--------+-------------+
+|  3 | 2014-12-12 | 800.67 |           2 |
+|  4 | 2015-01-03 |  12.50 |           2 |
+|  5 | 1999-04-11 | 450.25 |           5 |
++----+------------+--------+-------------+
+3 rows in set (0.00 sec)

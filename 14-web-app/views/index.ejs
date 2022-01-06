@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>JOIN US</title>
+  </head>
+  <body>
+    <div class="w-full h-20 bg-purple-600 flex items-center">
+      <h1 class="text-3xl text-white ml-28">JOIN US</h1>
+    </div>
+    <div class="mt-20">
+      <p class="text-center text-purple-600 md:text-4xl">
+        Enter your email to join <strong><%= count %></strong> others on our
+        waitlist. We are 100% not a cult.
+      </p>
+    </div>
+    <form
+      method="POST"
+      action="/register"
+      class="max-w-lg border shadow-2xl mx-auto flex flex-col mt-20 p-8"
+    >
+      <input
+        type="text"
+        name="email"
+        class="
+          border-2 border-purple-600
+          rounded-lg
+          h-10
+          focus:outline-none
+          px-0.5
+          text-center
+        "
+        placeholder="Enter Your Email"
+      />
+      <button class="mt-10 rounded-lg bg-purple-600 text-white p-2">
+        Join Now
+      </button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+Adds things together
+Sum all pages in the entire database
+
+mysql> SELECT SUM(pages) FROM books;
++------------+
+| SUM(pages) |
++------------+
+|       6623 |
++------------+
+1 row in set (0.03 sec)
+
+mysql> SELECT SUM(released_year) FROM books;
++--------------------+
+| SUM(released_year) |
++--------------------+
+|              37996 |
++--------------------+
+1 row in set (0.00 sec)
+
+Sum all the pages each author has written
+
+mysql> SELECT CONCAT(author_fname , ' ' , author_lname) AS "AUTHOR" ,
+       SUM(pages) AS "TOTAL PAGES" FROM books GROUP BY author_lname , author_fname;
++----------------------+-------------+
+| AUTHOR               | TOTAL PAGES |
++----------------------+-------------+
+| Jhumpa Lahiri        |         489 |
+| Neil Gaiman          |         977 |
+| Dave Eggers          |        1293 |
+| Michael Chabon       |         634 |
+| Patti Smith          |         304 |
+| Raymond Carver       |         702 |
+| Don DeLillo          |         320 |
+| John Steinbeck       |         181 |
+| David Foster Wallace |         672 |
+| Dan Harris           |         256 |
+| Freida Harris        |         428 |
+| George Saunders      |         367 |
++----------------------+-------------+
+12 rows in set (0.28 sec)

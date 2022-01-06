@@ -1,0 +1,48 @@
+SELECT 
+    title, 
+    author_lname, 
+    released_year 
+FROM books
+WHERE author_lname='Eggers' OR released_year > 2010;
+
+mysql> SELECT
+    ->     title,
+    ->     author_lname,
+    ->     released_year
+    -> FROM books
+    -> WHERE author_lname='Eggers' OR released_year > 2010;
++-------------------------------------------+--------------+---------------+
+| title                                     | author_lname | released_year |
++-------------------------------------------+--------------+---------------+
+| Norse Mythology                           | Gaiman       |          2016 |
+| A Hologram for the King: A Novel          | Eggers       |          2012 |
+| The Circle                                | Eggers       |          2013 |
+| A Heartbreaking Work of Staggering Genius | Eggers       |          2001 |
+| 10% Happier                               | Harris       |          2014 |
+| Lincoln In The Bardo                      | Saunders     |          2017 |
++-------------------------------------------+--------------+---------------+
+6 rows in set (0.00 sec) 
+ 
+SELECT 40 <= 100 OR -2 > 0;
+-- true
+ 
+SELECT 10 > 5 OR 5 = 5;
+-- true
+ 
+SELECT 'a' = 5 OR 3000 > 2000;
+-- true
+ 
+SELECT title, author_lname, released_year, stock_quantity FROM   books WHERE  author_lname = 'Eggers' OR released_year > 2010;
+
+mysql> SELECT title, author_lname, released_year, stock_quantity FROM   books WHERE  author_lname = 'Eggers' OR released_year > 2010;
++-------------------------------------------+--------------+---------------+----------------+
+| title                                     | author_lname | released_year | stock_quantity |
++-------------------------------------------+--------------+---------------+----------------+
+| Norse Mythology                           | Gaiman       |          2016 |             43 |
+| A Hologram for the King: A Novel          | Eggers       |          2012 |            154 |
+| The Circle                                | Eggers       |          2013 |             26 |
+| A Heartbreaking Work of Staggering Genius | Eggers       |          2001 |            104 |
+| 10% Happier                               | Harris       |          2014 |             29 |
+| Lincoln In The Bardo                      | Saunders     |          2017 |           1000 |
++-------------------------------------------+--------------+---------------+----------------+
+6 rows in set (0.00 sec)

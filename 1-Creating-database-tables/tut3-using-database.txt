@@ -1,0 +1,44 @@
+QUERY = "USE <database name>;"
+
+how to know currently used database in mysql
+
+QUERY = "SELECT database();"
+
+mysql> CREATE DATABASE karan_db;
+Query OK, 1 row affected (0.20 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| karan_db           |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.07 sec)
+
+mysql> use karan_db;
+Database changed
+
+mysql> SELECT database();
++------------+
+| database() |
++------------+
+| karan_db   |
++------------+
+1 row in set (0.00 sec)
+
+
+NULL means we are not using any database now 
+mysql> SELECT DATABASE();
++------------+
+| DATABASE() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+

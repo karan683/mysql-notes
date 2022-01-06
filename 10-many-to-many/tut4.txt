@@ -1,0 +1,33 @@
+Challenge 3
+
++------------+-----------+--------+
+| first_name | last_name | rating |
++------------+-----------+--------+
+| Thomas     | Stoneman  |    8.0 |
+| Thomas     | Stoneman  |    8.1 |
+| Thomas     | Stoneman  |    7.0 |
+| Thomas     | Stoneman  |    7.5 |
+| Thomas     | Stoneman  |    9.5 |
+| Wyatt      | Skaggs    |    7.5 |
+| Wyatt      | Skaggs    |    7.6 |
+| Wyatt      | Skaggs    |    9.3 |
+| Wyatt      | Skaggs    |    6.5 |
+| Wyatt      | Skaggs    |    8.4 |
++------------+-----------+--------+
+
+mysql> select first_name , last_name , rating  from reviewers join reviews on reviewers.id=reviews.reviewer_id limit 10;
++------------+-----------+--------+
+| first_name | last_name | rating |
++------------+-----------+--------+
+| Thomas     | Stoneman  |    8.0 |
+| Thomas     | Stoneman  |    8.1 |
+| Thomas     | Stoneman  |    7.0 |
+| Thomas     | Stoneman  |    7.5 |
+| Thomas     | Stoneman  |    9.5 |
+| Wyatt      | Skaggs    |    7.5 |
+| Wyatt      | Skaggs    |    7.6 |
+| Wyatt      | Skaggs    |    9.3 |
+| Wyatt      | Skaggs    |    6.5 |
+| Wyatt      | Skaggs    |    8.4 |
++------------+-----------+--------+
+10 rows in set (0.00 sec)

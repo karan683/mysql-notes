@@ -1,0 +1,72 @@
+Formatting Dates
+
+Date and Time functions
+
+mysql> SELECT name , birthdate FROM people;
++-------+------------+
+| name  | birthdate  |
++-------+------------+
+| karan | 2001-08-17 |
+| bob   | 2021-11-26 |
++-------+------------+
+2 rows in set (0.00 sec)
+
+It extract the day
+mysql> SELECT DAY(birthdate) FROM people;
++----------------+
+| DAY(birthdate) |
++----------------+
+|             17 |
+|             26 |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT DAYNAME(birthdate) FROM people;
++--------------------+
+| DAYNAME(birthdate) |
++--------------------+
+| Friday             |
+| Friday             |
++--------------------+
+2 rows in set (0.05 sec)
+
+mysql> SELECT DAYOFWEEK(birthdate) FROM people;
++----------------------+
+| DAYOFWEEK(birthdate) |
++----------------------+
+|                    6 |
+|                    6 |
++----------------------+
+2 rows in set (0.02 sec)
+
+mysql> SELECT DAYOFYEAR(birthdate) FROM people;
++----------------------+
+| DAYOFYEAR(birthdate) |
++----------------------+
+|                  229 |
+|                  330 |
++----------------------+
+2 rows in set (1.04 sec)
+
+MONTH()
+MONTHNAME()
+HOUR()
+MINUTE()
+
+mysql> select date_format(birthdate,'%W %M %Y') FROM people;
++-----------------------------------+
+| date_format(birthdate,'%W %M %Y') |
++-----------------------------------+
+| Friday August 2001                |
+| Friday November 2021              |
++-----------------------------------+
+2 rows in set (0.09 sec)
+
+mysql> SELECT DATE_FORMAT(birthdt,'%d/%m/%y') FROM people;
++---------------------------------+
+| DATE_FORMAT(birthdt,'%d/%m/%y') |
++---------------------------------+
+| 17/08/01                        |
+| 26/11/21                        |
++---------------------------------+
+2 rows in set (0.00 sec)

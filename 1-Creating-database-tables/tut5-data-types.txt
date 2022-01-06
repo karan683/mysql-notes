@@ -1,0 +1,26 @@
+DATA TYPES
+
+Numeric TYPES
+1 INT 
+2 SMALL INT
+3 TINY INT
+4 MEDIUM INT
+5 BIG INT
+6 DECIMAL
+7 NUMERIC
+8 FLOAT
+9 DOUBLE
+10 BIT
+
+String
+1 CHAR (fixed length)
+2 VARCHAR(100) (string) (variable length)
+3 BINART
+and many more
+
+Date TYPES
+1 DATE
+2 DATETIME
+3 TIMESTAMP
+4 TIME
+5 YEAR

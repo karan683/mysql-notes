@@ -1,0 +1,17 @@
+Aliases is different name given to the same entity
+
+SELECT <colname> AS <myname> FROM <tablename>;
+
+mysql> SELECT cat_id AS id,name FROM cats;
++----+----------------+
+| id | name           |
++----+----------------+
+|  1 | Ringo          |
+|  2 | Cindy          |
+|  3 | Dumbledore     |
+|  4 | Egg            |
+|  5 | Misty          |
+|  6 | George Michael |
+|  7 | Jackson        |
++----+----------------+
+7 rows in set (0.00 sec)

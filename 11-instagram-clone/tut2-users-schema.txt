@@ -1,0 +1,28 @@
+USERS SCHEMA
+id
+username
+created_at
+
+CREATE TABLE users(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+mysql> CREATE TABLE users(
+    ->     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ->     username VARCHAR(255) UNIQUE NOT NULL,
+    ->     created_at TIMESTAMP DEFAULT NOW()
+    -> );
+Query OK, 0 rows affected (2.28 sec)
+
+mysql> desc users;
++------------+--------------+------+-----+-------------------+-------------------+
+| Field      | Type         | Null | Key | Default           | Extra             |
++------------+--------------+------+-----+-------------------+-------------------+
+| id         | int          | NO   | PRI | NULL              | auto_increment    |
+| username   | varchar(255) | NO   | UNI | NULL              |                   |
+| created_at | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+--------------+------+-----+-------------------+-------------------+
+3 rows in set (0.21 sec)
+

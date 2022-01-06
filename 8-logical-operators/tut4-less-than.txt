@@ -1,0 +1,13 @@
+LESS THAN (<) and EQUAL TO (<=)
+
+mysql> SELECT * FROM books WHERE released_year < 2000;
++---------+-----------------------------------------------------+--------------+--------------+---------------+----------------+-------+
+| book_id | title                                               | author_fname | author_lname | released_year | stock_quantity | pages |
++---------+-----------------------------------------------------+--------------+--------------+---------------+----------------+-------+
+|       4 | Interpreter of Maladies                             | Jhumpa       | Lahiri       |          1996 |             97 |   198 |
+|      11 | What We Talk About When We Talk About Love: Stories | Raymond      | Carver       |          1981 |             23 |   176 |
+|      12 | Where I'm Calling From: Selected Stories            | Raymond      | Carver       |          1989 |             12 |   526 |
+|      13 | White Noise                                         | Don          | DeLillo      |          1985 |             49 |   320 |
+|      14 | Cannery Row                                         | John         | Steinbeck    |          1945 |             95 |   181 |
++---------+-----------------------------------------------------+--------------+--------------+---------------+----------------+-------+
+5 rows in set (0.00 sec)

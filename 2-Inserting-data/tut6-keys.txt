@@ -1,0 +1,104 @@
+mysql> desc cats;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(30) | NO   |     | unnamed |       |
+| age   | int         | NO   |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.14 sec)
+
+here we can insert duplicate data we want to uniquely identify data
+
+mysql> INSERT INTO cats(name,age) VALUES('karan',10),('karan',10),('karan',10);
+Query OK, 3 rows affected (0.17 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+mysql> SELECT * FROM cats;
++---------+-----+
+| name    | age |
++---------+-----+
+| unnamed |  10 |
+| unnamed |  12 |
+| karan   |  10 |
+| karan   |  10 |
+| karan   |  10 |
++---------+-----+
+5 rows in set (0.02 sec)
+
+primary key is used to uniquely identify the data
+
+
+mysql> CREATE TABLE unique_cats(
+    -> name VARCHAR(30) NOT NULL DEFAULT 'mycat',
+    -> age INT NOT NULL DEFAULT 5,
+    -> cat_id INT NOT NULL,
+    -> PRIMARY KEY (cat_id)
+    -> );
+Query OK, 0 rows affected (0.58 sec)
+
+
+mysql> DESC unique_cats;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(30) | NO   |     | mycat   |       |
+| age    | int         | NO   |     | 5       |       |
+| cat_id | int         | NO   | PRI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.30 sec)
+
+mysql> INSERT INTO unique_cats(name , age , cat_id ) VALUES('noob',5,1);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> SELECT * FROM unique_cats;
++------+-----+--------+
+| name | age | cat_id |
++------+-----+--------+
+| noob |   5 |      1 |
++------+-----+--------+
+1 row in set (0.00 sec)
+
+If we want to auto increment the id 
+
+mysql> CREATE TABLE cats(
+    -> name VARCHAR(30) NOT NULL DEFAULT 'cat',
+    -> age INT NOT NULL DEFAULT 2,
+    -> cat_id INT NOT NULL AUTO_INCREMENT,
+    -> PRIMARY KEY (cat_id)
+    -> );
+Query OK, 0 rows affected (0.67 sec)
+
+
+mysql> DESC cats;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| name   | varchar(30) | NO   |     | cat     |                |
+| age    | int         | NO   |     | 2       |                |
+| cat_id | int         | NO   | PRI | NULL    | auto_increment |
++--------+-------------+------+-----+---------+----------------+
+3 rows in set (0.21 sec)
+
+mysql> INSERT INTO cats(name ,age) VALUES ('kitty',1);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> SELECT * FROM cats;
++-------+-----+--------+
+| name  | age | cat_id |
++-------+-----+--------+
+| kitty |   1 |      1 |
++-------+-----+--------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO cats(name ,age) VALUES ('jimmy',2);
+Query OK, 1 row affected (0.22 sec)
+
+mysql> SELECT * FROM cats;
++-------+-----+--------+
+| name  | age | cat_id |
++-------+-----+--------+
+| kitty |   1 |      1 |
+| jimmy |   2 |      2 |
++-------+-----+--------+
+2 rows in set (0.00 sec)

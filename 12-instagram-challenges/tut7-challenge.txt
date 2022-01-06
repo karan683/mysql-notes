@@ -1,0 +1,41 @@
+We have a small problem with bots on our site...
+Find users who have liked every single photo on the site
+HAVING is like where clause which allows us to filter the grouped data
+
+SELECT 
+    username,
+    user_id,
+    COUNT(*) AS num_likes
+FROM users
+INNER JOIN likes
+    ON users.id = likes.user_id
+GROUP BY likes.user_id
+HAVING num_likes = (SELECT COUNT(*) FROM photos);
+
+mysql> SELECT
+    ->     username,
+    ->     user_id,
+    ->     COUNT(*) AS num_likes
+    -> FROM users
+    -> INNER JOIN likes
+    ->     ON users.id = likes.user_id
+    -> GROUP BY likes.user_id
+    -> HAVING num_likes = (SELECT COUNT(*) FROM photos);
++--------------------+---------+-----------+
+| username           | user_id | num_likes |
++--------------------+---------+-----------+
+| Aniya_Hackett      |       5 |       257 |
+| Bethany20          |      91 |       257 |
+| Duane60            |      54 |       257 |
+| Jaclyn81           |      14 |       257 |
+| Janelle.Nikolaus81 |      76 |       257 |
+| Julien_Schmidt     |      57 |       257 |
+| Leslie67           |      75 |       257 |
+| Maxwell.Halvorson  |      24 |       257 |
+| Mckenna17          |      41 |       257 |
+| Mike.Auer39        |      66 |       257 |
+| Nia_Haag           |      71 |       257 |
+| Ollie_Ledner37     |      36 |       257 |
+| Rocio33            |      21 |       257 |
++--------------------+---------+-----------+
+13 rows in set (0.01 sec)

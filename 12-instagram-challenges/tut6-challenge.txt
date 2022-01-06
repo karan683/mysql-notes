@@ -1,0 +1,14 @@
+A brand wants to know which hastags to use in a post 
+What are the top 5 most commonly used hashtags?
+
+mysql> select tag_name , count(*) as popular from tags join photo_tags on tag_id = tags.id group by tags.id order by popular desc limit 5;
++----------+---------+
+| tag_name | popular |
++----------+---------+
+| smile    |      59 |
+| beach    |      42 |
+| party    |      39 |
+| fun      |      38 |
+| concert  |      24 |
++----------+---------+
+5 rows in set (0.00 sec)

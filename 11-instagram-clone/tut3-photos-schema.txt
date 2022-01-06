@@ -1,0 +1,34 @@
+PHOTOS
+id
+image_url
+user_id
+created_at
+
+CREATE TABLE PHOTOS (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(255) NOT NULL, 
+    user_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+mysql> CREATE TABLE PHOTOS (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     image_url VARCHAR(255) NOT NULL,
+    ->     user_id INT NOT NULL,
+    ->     created_at TIMESTAMP DEFAULT NOW(),
+    ->     FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+    -> );
+Query OK, 0 rows affected (2.06 sec)
+
+mysql> desc photos;
++------------+--------------+------+-----+-------------------+-------------------+
+| Field      | Type         | Null | Key | Default           | Extra             |
++------------+--------------+------+-----+-------------------+-------------------+
+| id         | int          | NO   | PRI | NULL              | auto_increment    |
+| image_url  | varchar(255) | NO   |     | NULL              |                   |
+| user_id    | int          | NO   | MUL | NULL              |                   |
+| created_at | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++------------+--------------+------+-----+-------------------+-------------------+
+4 rows in set (0.14 sec)
+

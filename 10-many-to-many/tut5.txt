@@ -1,0 +1,18 @@
+Challenge 4
+
++-----------------------+
+| unreviewed_series     |
++-----------------------+
+| Malcolm In The Middle |
+| Pushing Daisies       |
++-----------------------+
+
+mysql> select title as 'unreviewed_series' from series left join reviews on reviews.series_id = series.id WHERE rating is NULL;
+
++-----------------------+
+| unreviewed_series     |
++-----------------------+
+| Malcolm In The Middle |
+| Pushing Daisies       |
++-----------------------+
+2 rows in set (0.00 sec)

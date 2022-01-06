@@ -1,0 +1,10 @@
+We're running a new contest to see who can get the most likes one single photo.
+Who won??
+
+mysql> select count(*) as 'max_likes' , photos.image_url , username from likes join photos on photos.id = likes.photo_id join users on photos.user_id = users.id group by photo_id order by max_likes desc limit 1;
++-----------+---------------------+---------------+
+| max_likes | image_url           | username      |
++-----------+---------------------+---------------+
+|        48 | https://jarret.name | Zack_Kemmer93 |
++-----------+---------------------+---------------+
+1 row in set (0.01 sec)

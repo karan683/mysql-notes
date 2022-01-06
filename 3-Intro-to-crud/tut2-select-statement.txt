@@ -1,0 +1,84 @@
+SELECT 
+
+QUERY COMMAND
+
+SELECT * FROM <tablename>;
+
+here "*" means give me all the "columns" from the table
+
+mysql> SELECT * FROM cats;
++--------+----------------+------------+------+
+| cat_id | name           | breed      | age  |
++--------+----------------+------------+------+
+|      1 | Ringo          | Tabby      |    4 |
+|      2 | Cindy          | Maine Coon |   10 |
+|      3 | Dumbledore     | Maine Coon |   11 |
+|      4 | Egg            | Persian    |    4 |
+|      5 | Misty          | Tabby      |   13 |
+|      6 | George Michael | Ragdoll    |    9 |
+|      7 | Jackson        | Sphynx     |    7 |
++--------+----------------+------------+------+
+7 rows in set (0.00 sec)
+
+if we want particular one column from the table
+
+mysql> SELECT name FROM cats;
++----------------+
+| name           |
++----------------+
+| Ringo          |
+| Cindy          |
+| Dumbledore     |
+| Egg            |
+| Misty          |
+| George Michael |
+| Jackson        |
++----------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT age FROM cats;
++------+
+| age  |
++------+
+|    4 |
+|   10 |
+|   11 |
+|    4 |
+|   13 |
+|    9 |
+|    7 |
++------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT cat_id FROM cats;
++--------+
+| cat_id |
++--------+
+|      1 |
+|      2 |
+|      3 |
+|      4 |
+|      5 |
+|      6 |
+|      7 |
++--------+
+7 rows in set (0.00 sec)
+
+if we want to get particular "column's" order matters here colname order 
+
+SELECT <colname> , <colname> FROM <tablename>;
+
+mysql> SELECT name , age FROM cats;
++----------------+------+
+| name           | age  |
++----------------+------+
+| Ringo          |    4 |
+| Cindy          |   10 |
+| Dumbledore     |   11 |
+| Egg            |    4 |
+| Misty          |   13 |
+| George Michael |    9 |
+| Jackson        |    7 |
++----------------+------+
+7 rows in set (0.00 sec)
+

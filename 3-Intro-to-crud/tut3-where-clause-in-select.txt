@@ -1,0 +1,26 @@
+WHERE CLAUSE statement in SELECT statement
+
+how to select particular one entry
+
+SELECT <colname> || * FROM <tablename> WHERE <colname> (some condition)
+
+SELECT * FROM cats WHERE age=4;
+
+here age is colname
+
+mysql> SELECT * FROM cats WHERE age=4;
++--------+-------+---------+------+
+| cat_id | name  | breed   | age  |
++--------+-------+---------+------+
+|      1 | Ringo | Tabby   |    4 |
+|      4 | Egg   | Persian |    4 |
++--------+-------+---------+------+
+2 rows in set (0.09 sec)
+
+mysql> SELECT * FROM cats WHERE name='egg';
++--------+------+---------+------+
+| cat_id | name | breed   | age  |
++--------+------+---------+------+
+|      4 | Egg  | Persian |    4 |
++--------+------+---------+------+
+1 row in set (0.00 sec)

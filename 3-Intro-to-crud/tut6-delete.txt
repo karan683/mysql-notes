@@ -1,0 +1,39 @@
+Delete
+
+DELETE FROM <tablename> WHERE <colname>=<value>;
+
+example = DELETE FROM cats WHERE name='Egg';
+
+mysql> select * from cats;
++--------+----------------+-------------------+------+
+| cat_id | name           | breed             | age  |
++--------+----------------+-------------------+------+
+|      1 | ringo          | british shorthair |    4 |
+|      2 | Cindy          | Maine Coon        |   12 |
+|      3 | Dumbledore     | Maine Coon        |   12 |
+|      4 | Egg            | Persian           |    4 |
+|      5 | Misty          | Shorthair         |   14 |
+|      6 | George Michael | Ragdoll           |    9 |
+|      7 | Jack           | Sphynx            |    7 |
++--------+----------------+-------------------+------+
+7 rows in set (0.00 sec)
+
+mysql> DELETE FROM cats WHERE name='Egg';
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from cats;
++--------+----------------+-------------------+------+
+| cat_id | name           | breed             | age  |
++--------+----------------+-------------------+------+
+|      1 | ringo          | british shorthair |    4 |
+|      2 | Cindy          | Maine Coon        |   12 |
+|      3 | Dumbledore     | Maine Coon        |   12 |
+|      5 | Misty          | Shorthair         |   14 |
+|      6 | George Michael | Ragdoll           |    9 |
+|      7 | Jack           | Sphynx            |    7 |
++--------+----------------+-------------------+------+
+6 rows in set (0.02 sec)
+
+if you want to delete all cats data
+DELETE FROM <tablename>;
+DELETE FROM cats;

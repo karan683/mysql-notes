@@ -1,0 +1,33 @@
+DEFAULT value
+
+CREATE  TABLE cats(
+    name VARCHAR(100) DEFAULT 'unnamed',
+    age INT DEFAULT 99
+);
+
+mysql> CREATE TABLE cats(
+    -> name VARCHAR(30) NOT NULL DEFAULT 'unnamed',
+    -> age INT NOT NULL DEFAULT 10
+    -> );
+Query OK, 0 rows affected (2.17 sec)
+
+mysql> DESC cats;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(30) | NO   |     | unnamed |       |
+| age   | int         | NO   |     | 10      |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.07 sec)
+
+mysql> INSERT INTO cats(age) VALUES(12);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> SELECT * FROM cats;
++---------+-----+
+| name    | age |
++---------+-----+
+| unnamed |  12 |
++---------+-----+
+2 rows in set (0.00 sec)
+

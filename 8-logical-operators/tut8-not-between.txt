@@ -1,0 +1,31 @@
+NOT BETWEEN
+
+mysql> SELECT title , released_year FROM books WHERE released_year NOT BETWEEN 2004 AND 2015;
++-----------------------------------------------------+---------------+
+| title                                               | released_year |
++-----------------------------------------------------+---------------+
+| The Namesake                                        |          2003 |
+| Norse Mythology                                     |          2016 |
+| American Gods                                       |          2001 |
+| Interpreter of Maladies                             |          1996 |
+| The Amazing Adventures of Kavalier & Clay           |          2000 |
+| A Heartbreaking Work of Staggering Genius           |          2001 |
+| Coraline                                            |          2003 |
+| What We Talk About When We Talk About Love: Stories |          1981 |
+| Where I'm Calling From: Selected Stories            |          1989 |
+| White Noise                                         |          1985 |
+| Cannery Row                                         |          1945 |
+| fake_book                                           |          2001 |
+| Lincoln In The Bardo                                |          2017 |
++-----------------------------------------------------+---------------+
+13 rows in set (0.00 sec)
+
+CAST() convert the value from data type to another type 
+
+mysql> SELECT CAST('2017-05-02' AS DATETIME);
++--------------------------------+
+| CAST('2017-05-02' AS DATETIME) |
++--------------------------------+
+| 2017-05-02 00:00:00            |
++--------------------------------+
+1 row in set (0.02 sec)

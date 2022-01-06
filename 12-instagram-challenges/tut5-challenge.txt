@@ -1,0 +1,16 @@
+Our Investors want to know ...
+How many times does the average user post ?
+
+total number of photos / total number of users
+SELECT COUNT(*) FROM photos;
+SELECT COUNT(*) FROM users;
+
+SELECT (SELECT COUNT(*) FROM photos) / (SELECT COUNT(*) FROM users);
+
+mysql> SELECT (SELECT COUNT(*) FROM photos) / (SELECT COUNT(*) FROM users);
++--------------------------------------------------------------+
+| (SELECT COUNT(*) FROM photos) / (SELECT COUNT(*) FROM users) |
++--------------------------------------------------------------+
+|                                                       2.5700 |
++--------------------------------------------------------------+
+1 row in set (0.02 sec)

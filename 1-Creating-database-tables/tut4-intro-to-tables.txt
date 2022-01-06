@@ -1,0 +1,9 @@
+TABLES ARE THE TRUE HEART OF SQL
+
+A database is just a bunch of tables
+Tables hold the data!
+
+COLUMNS( MEANS HEADERS)
+ROWS( MEANS ACTUAL DATA)
+
+Database are made up of lots of tables

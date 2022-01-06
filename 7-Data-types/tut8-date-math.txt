@@ -1,0 +1,21 @@
+Date Math
+
+DATEDIFF() takes two dates and subtracts gives you number of days
+
+mysql> SELECT * FROM PEOPLE;
++-------+------------+-----------+---------------------+
+| name  | birthdate  | birthtime | birthdt             |
++-------+------------+-----------+---------------------+
+| karan | 2001-08-17 | 12:15:00  | 2001-08-17 12:15:00 |
+| bob   | 2021-11-26 | 14:44:16  | 2021-11-26 14:44:16 |
++-------+------------+-----------+---------------------+
+2 rows in set (0.73 sec)
+
+mysql> SELECT DATEDIFF(NOW(),birthdt) FROM people;
++-------------------------+
+| DATEDIFF(NOW(),birthdt) |
++-------------------------+
+|                    7406 |
+|                       0 |
++-------------------------+
+2 rows in set (0.04 sec)

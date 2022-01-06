@@ -1,0 +1,4 @@
+floats and double can store large number with large space
+
+float has precision up to 7 digits
+double has precision up 15 digits

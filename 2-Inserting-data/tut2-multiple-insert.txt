@@ -1,0 +1,17 @@
+INSERT INTO <tablename>(column_name) VALUES (data) , (data) , (data);
+
+mysql> INSERT INTO cats(name , age) VALUES('mycat',10),('tom',20),('noob_cat',15);
+Query OK, 3 rows affected (0.11 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM cats;
++----------+------+
+| name     | age  |
++----------+------+
+| blue     |    5 |
+| kitty    |    1 |
+| mycat    |   10 |
+| tom      |   20 |
+| noob_cat |   15 |
++----------+------+
+5 rows in set (0.02 sec)

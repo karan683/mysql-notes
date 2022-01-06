@@ -1,0 +1,25 @@
+REVERSE
+reverses the string
+
+mysql> select reverse(title) from books;
++-----------------------------------------------------+
+| reverse(title)                                      |
++-----------------------------------------------------+
+| ekasemaN ehT                                        |
+| ygolohtyM esroN                                     |
+| sdoG naciremA                                       |
+| seidalaM fo reterpretnI                             |
+| levoN A :gniK eht rof margoloH A                    |
+| elcriC ehT                                          |
+| yalC & reilavaK fo serutnevdA gnizamA ehT           |
+| sdiK tsuJ                                           |
+| suineG gnireggatS fo kroW gnikaerbtraeH A           |
+| enilaroC                                            |
+| seirotS :evoL tuobA klaT eW nehW tuobA klaT eW tahW |
+| seirotS detceleS :morF gnillaC m'I erehW            |
+| esioN etihW                                         |
+| woR yrennaC                                         |
+| seirotS :noivilbO                                   |
+| retsboL eht redisnoC                                |
++-----------------------------------------------------+
+16 rows in set (0.02 sec)

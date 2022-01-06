@@ -1,0 +1,36 @@
+IN operator
+
+SELECT title , author_lname FROM books where author_lname in ('carver','lahiri','smith');
+
+mysql> SELECT title , author_lname FROM books where author_lname in ('carver','lahiri','smith');
++-----------------------------------------------------+--------------+
+| title                                               | author_lname |
++-----------------------------------------------------+--------------+
+| The Namesake                                        | Lahiri       |
+| Interpreter of Maladies                             | Lahiri       |
+| Just Kids                                           | Smith        |
+| What We Talk About When We Talk About Love: Stories | Carver       |
+| Where I'm Calling From: Selected Stories            | Carver       |
++-----------------------------------------------------+--------------+
+5 rows in set (0.15 sec)
+
+mysql> SELECT title , author_lname FROM books where author_lname not in ('carver','lahiri','smith');
++-------------------------------------------+----------------+
+| title                                     | author_lname   |
++-------------------------------------------+----------------+
+| Norse Mythology                           | Gaiman         |
+| American Gods                             | Gaiman         |
+| A Hologram for the King: A Novel          | Eggers         |
+| The Circle                                | Eggers         |
+| The Amazing Adventures of Kavalier & Clay | Chabon         |
+| A Heartbreaking Work of Staggering Genius | Eggers         |
+| Coraline                                  | Gaiman         |
+| White Noise                               | DeLillo        |
+| Cannery Row                               | Steinbeck      |
+| Oblivion: Stories                         | Foster Wallace |
+| Consider the Lobster                      | Foster Wallace |
+| 10% Happier                               | Harris         |
+| fake_book                                 | Harris         |
+| Lincoln In The Bardo                      | Saunders       |
++-------------------------------------------+----------------+
+14 rows in set (0.00 sec)

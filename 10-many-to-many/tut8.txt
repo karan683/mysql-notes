@@ -1,0 +1,36 @@
+Challenge 7 
+
+SELECT 
+    title, 
+    rating,
+    CONCAT(first_name,' ',last_name) AS 'reviewers'
+FROM reviewers 
+INNER JOIN reviews 
+    ON reviewers.id = reviews.reviewer_id
+INNER JOIN series 
+    ON series.id = reviews.series_id LIMIT 10; 
+
+mysql> SELECT
+    ->     title,
+    ->     rating,
+    ->     CONCAT(first_name,' ',last_name) AS 'reviewers'
+    -> FROM reviewers
+    -> INNER JOIN reviews
+    ->     ON reviewers.id = reviews.reviewer_id
+    -> INNER JOIN series
+    ->     ON series.id = reviews.series_id LIMIT 10;
++----------------------+--------+-----------------+
+| title                | rating | reviewers       |
++----------------------+--------+-----------------+
+| Archer               |    8.0 | Thomas Stoneman |
+| Arrested Development |    8.1 | Thomas Stoneman |
+| Bob's Burgers        |    7.0 | Thomas Stoneman |
+| Bojack Horseman      |    7.5 | Thomas Stoneman |
+| Breaking Bad         |    9.5 | Thomas Stoneman |
+| Archer               |    7.5 | Wyatt Skaggs    |
+| Bojack Horseman      |    7.6 | Wyatt Skaggs    |
+| Breaking Bad         |    9.3 | Wyatt Skaggs    |
+| Curb Your Enthusiasm |    6.5 | Wyatt Skaggs    |
+| Curb Your Enthusiasm |    8.4 | Wyatt Skaggs    |
++----------------------+--------+-----------------+
+10 rows in set (0.00 sec)
